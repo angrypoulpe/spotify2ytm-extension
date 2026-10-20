@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spotify → YouTube Music</title>
+    <style>
+      :root { color-scheme: light dark; }
+      body {
+        width: 340px;
+        margin: 0;
+        padding: 14px;
+        font: 14px/1.4 system-ui, sans-serif;
+      }
+      h1 { font-size: 15px; margin: 0 0 10px; }
+      .row { display: flex; gap: 6px; }
+      input {
+        flex: 1;
+        min-width: 0;
+        padding: 7px 8px;
+        border: 1px solid #8884;
+        border-radius: 6px;
+        font: inherit;
+        background: transparent;
+        color: inherit;
+      }
+      button {
+        padding: 7px 10px;
+        border: 0;
+        border-radius: 6px;
+        font: inherit;
+        cursor: pointer;
+        background: #1a73e8;
+        color: #fff;
+      }
+      button.secondary { background: #8883; color: inherit; }
+      button:disabled { opacity: 0.5; cursor: default; }
+      #result { margin-top: 12px; }
+      #name { font-weight: 600; word-break: break-word; margin-bottom: 8px; }
+      #error { margin-top: 12px; color: #d93025; }
+      .actions { display: flex; gap: 6px; }
+      [hidden] { display: none !important; }
+    </style>
+  </head>
+  <body>
+    <h1>Spotify → YouTube Music</h1>
+    <div class="row">
+      <input id="url" type="text" placeholder="Paste a Spotify link" autofocus />
+      <button id="convert">Convert</button>
+    </div>
+
+    <div id="result" hidden>
+      <div id="name"></div>
+      <div class="actions">
+        <button id="open">Open</button>
+        <button id="copy" class="secondary">Copy link</button>
+      </div>
+    </div>
+    <div id="error" hidden></div>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

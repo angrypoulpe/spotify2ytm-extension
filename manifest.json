@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Spotify → YouTube Music",
+  "version": "1.0.0",
+  "description": "convert a spotify link or tab into a Youtube Music link",
+  "permissions": ["contextMenus", "activeTab"],
+  "host_permissions": [
+    "https://open.spotify.com/*",
+    "https://spotify.link/*",
+    "https://spotify.app.link/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "Spotify → YouTube Music",
+    "default_popup": "popup.html"
+  }
+}
